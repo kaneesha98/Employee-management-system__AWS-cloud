@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Employee information</title>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <style>
+      body {
+  background: #fafafa;
+  color: #444;
+  font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
+  text-shadow: 0 1px 0 #fff;
+}
+
+em {
+  font-style: italic; 
+}
+
+table {
+  background: #f5f5f5;
+  border-collapse: separate;
+  box-shadow: inset 0 1px 0 #fff;
+  font-size: 12px;
+  line-height: 24px;
+  margin: 30px auto;
+  text-align: left;
+  width: 800px;
+} 
+
+th {
+  background: linear-gradient(#777, #444);
+  border-left: 1px solid #555;
+  border-right: 1px solid #777;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #333;
+  box-shadow: inset 0 1px 0 #999;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 15px;
+  position: relative;
+  text-shadow: 0 1px 0 #000;
+  font-family: 'Bree Serif', serif;
+  font-size: 20px;  
+}
+
+th:after {
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
+  content: '';
+  display: block;
+  height: 25%;
+  left: 0;
+  margin: 1px 0 0 0;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+
+th:first-child {
+  border-left: 1px solid #777;  
+  box-shadow: inset 1px 1px 0 #999;
+}
+
+th:last-child {
+  box-shadow: inset -1px 1px 0 #999;
+}
+
+td {
+  border-right: 1px solid #fff;
+  border-left: 1px solid #e8e8e8;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 300ms;
+  font-family: 'Bree Serif', serif;
+  font-size: 15px;
+}
+
+td:first-child {
+  box-shadow: inset 1px 0 0 #fff;
+} 
+
+td:last-child {
+  border-right: 1px solid #e8e8e8;
+  box-shadow: inset -1px 0 0 #fff;
+} 
+
+tr {
+  background: #f1f1f1;
+}
+
+tr:nth-child(odd) td {
+  background: #f1f1f1; 
+}
+
+tr:last-of-type td {
+  box-shadow: inset 0 -1px 0 #fff; 
+}
+
+tr:last-of-type td:first-child {
+  box-shadow: inset 1px -1px 0 #fff;
+} 
+
+tr:last-of-type td:last-child {
+  box-shadow: inset -1px -1px 0 #fff;
+} 
+
+tbody:hover td {
+  color: transparent;
+  text-shadow: 0 0 3px #aaa;
+}
+
+tbody:hover tr:hover td {
+  color: #444;
+  text-shadow: 0 1px 0 #fff;
+}
+
+caption {
+  font-family: 'Bree Serif', serif;
+  padding: 50px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+p {
+  text-indent: 35em;
+}
+
+</style>
+</head>
+<body>
+  <table>
+    <caption>Employee information</caption>
+  <thead>
+    <tr>
+      <th>FIELD</th>
+      <th>DETAILS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>EMPLOYEE ID:</b></td>
+      <td>{{ s }}</td>
+    </tr>
+    <tr>
+      <td><b>EMAIL ID:</b></td>
+      <td>{{ data[0] }}</td>
+    </tr>
+    <tr>
+      <td><b>DESIGNATION:<b></td>
+      <td>{{ data[1] }}</td>
+    </tr>
+    <tr>
+      <td><b>FIRST NAME:</b></td>
+      <td>{{ data[2] }}</td>
+    </tr>         
+    <tr>
+      <td><b>LAST NAME:</td>
+      <td>{{ data[3] }}</td>
+    </tr>
+    <tr>
+      <td><b>ADDRESS 1:</td>
+      <td>{{ data[4] }}</td>
+    </tr>
+    <tr>
+      <td><b>ADDRESS 2:</b></td>
+      <td>{{ data[5] }}</td>
+    </tr>
+    <tr>
+      <td><b>BLOODGROUP:</b></td>
+      <td>{{ data[6] }}</td>
+    </tr>
+    <tr>
+      <td><b>CITY:</b></td>
+      <td>{{ data[7] }}</td>
+    </tr>
+    <tr>
+      <td><b>STATE:</b></td>
+      <td>{{ data[8] }}</td>
+    </tr>
+    <tr>
+      <td><b>COUNTRY:</b></td>
+      <td>{{ data[9] }}</td>
+    </tr>
+    <tr>
+      <td><b>PHONE:</b></td>
+      <td>{{ data[10] }}</td>
+    </tr>
+    <tr>
+      <td><b>START_DATE:</b></td>
+      <td>{{ data[11] }}</td>
+    </tr>
+    <tr>
+      <td><b>DOB:</b></td>
+      <td>{{ data[12] }}</td>
+    </tr>
+  </tbody>
+</table>
+<p><a href="{{ url_for('home') }}">SIGN OUT</a></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

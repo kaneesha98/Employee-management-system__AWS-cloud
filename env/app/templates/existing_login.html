@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EXISTING EMPLOYEE LOGIN PAGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    background-image: url("../static/images/3.png");
+    background-size: 100%;
+}
+#container {
+    position: fixed;
+    width: 340px;
+    height: 340px;
+    top: 50%;
+    left: 50%;
+    margin-top: -140px;
+    margin-left: -170px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(81,203,238,1);
+    border: 1px solid rgba(81,203,238,1);
+  
+}
+form {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+label {
+    color: #555;
+    display: inline-block;
+    margin-left: 18px;
+    padding-top: 10px;
+    font-size: 16px;
+    font-family:bookman old style, bookman;
+}
+p a {
+    font-size: 11px;
+    color: #aaa;
+    float: right;
+    margin-top: -13px;
+    margin-right: 20px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+}
+p a:hover {
+    color: #555;
+}
+input {
+    font-size: 15px;
+    outline: none;
+    font-family:bookman old style, bookman;
+}
+input[type=number],
+input[type=password] {
+    color: #777;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-left: 18px;
+    width: 290px;
+    height: 35px;
+    border: 1px solid #c7d0d2;
+    border-radius: 2px;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .4), 0 0 0 5px #f5f7f8;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+    font-family:bookman old style, bookman;
+  }
+input[type=number]:hover,
+input[type=password]:hover {
+    border: 1px solid #b6bfc0;
+    box-shadow: inset 0 1.5px 3px rgba(190, 190, 190, .7), 0 0 0 5px #f5f7f8;
+}
+input[type=number]:focus,
+input[type=password]:focus {
+    box-shadow: 0 0 5px rgba(81,203,238,1);
+    border: 1px solid rgba(81,203,238,1);
+}
+#lower {
+    background: #ecf2f5;
+    width: 340px;
+    height: 69px;
+    margin-top: 20px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 0 0 5px rgba(81,203,238,1);
+    border-bottom: 1px solid rgba(81,203,238,1);
+    border-right: 1px solid rgba(81,203,238,1);
+    border-left: 1px solid rgba(81,203,238,1);
+}
+input[type=checkbox] {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-family:bookman old style, bookman;
+}
+.check {
+    margin-left: 3px;
+    font-size: 15px;
+    color: #444;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.error{
+  font-size: 20px;
+  color: green;
+}
+
+input[type=submit] {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #acd6ef; /*IE fallback*/
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#acd6ef), to(#6ec2e8));
+    background-image: -moz-linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+    background-image: linear-gradient(top left 90deg, #acd6ef 0%, #6ec2e8 100%);
+    border-radius: 30px;
+    border: 1px solid #66add6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .5);
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b6e2ff), to(#6ec2e8));
+    background-image: -moz-linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+    background-image: linear-gradient(top left 90deg, #b6e2ff 0%, #6ec2e8 100%);
+}
+input[type=submit]:active {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#6ec2e8), to(#b6e2ff));
+    background-image: -moz-linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
+    background-image: linear-gradient(top left 90deg, #6ec2e8 0%, #b6e2ff 100%);
+}
+h2   {font-family:bookman old style, bookman; font color: #483D8B;}
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2><center>EXISTING EMPLOYEE LOGIN</center></h2>
+      <p class="error"><center>{{error}}</center></p>
+      <form action="/existing_login.html" method="post">
+        <label for="Id">Employee ID:</label>
+        <input type="number" name="Id" value="{{request.form.Id }}" id="Id" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" value="{{request.form.password }}" id="password" required>
+        <div id="lower">
+                <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
+                <input type="submit" value="Login">
+        </div>
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </p>
+  </div>
+  </body>
+</html>
