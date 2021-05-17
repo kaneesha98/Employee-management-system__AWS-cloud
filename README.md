@@ -1,1 +1,5 @@
 # Employee-management-system__AWS-cloud
+I. Employee Management System is a distributed application, developed to maintain the details of employees working in any organization. It maintains the
+information about the personal details of their employees. This is a multiuser approachable project and aims to integrate systems for Human Resource (HR), Finance management and Employee management at one place. 
+II. The application is actually a suite of applications developed using Python. This software package has been developed using the powerful coding tools of HTML/CSS at Front End and SQLITE3 at Back End. The framework used here is Flask. 
+III.AWS EC2 instance, namely Linux is used for running the application and storing the required data using EBS volumes. All data, including HTML templates, static images, database and the main Python app file are stored on the instance. This provides an extra level of security as it only operates through a specific PRIVATE KEY file provided by AWS. Added to that, data can be stored directly onto the AWS Cloud, instead of storing it locally.
